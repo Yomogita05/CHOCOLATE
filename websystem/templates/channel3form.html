@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}CHOCOLATE CAFÉ{% endblock %}
+
+
+{% block contents %}
+
+<br>
+<section class="page-section about-heading" id="Target">
+    <div class="container">
+        <div class="about-heading-content">
+            <div class="row">
+                <div class="col-xl-9 col-lg-10 mx-auto">
+                    <!-- パンくずリスト -->
+                    <ul class="breadcrumbs">
+                        <li><a href="{% url "websystem:talk" %}">talk</a></li>
+                        <li><a href="{% url "websystem:channel3" %}">channel3</a></li>
+                        <li>channel3_form</li></ul>
+                    <div class="bg-faded rounded p-5">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <table>
+                                <tr>
+                                    <th>名前</th>
+                                    <td>{{ form.name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>コメント</th>
+                                    <td>{{ form.content }}※200字まで</td>
+                                </tr>
+                            </table>
+                            <hr>
+                            <button type="submit">書き込む</button>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

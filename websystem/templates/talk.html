@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}CHOCOLATE CAFÉ{% endblock %}
+
+{% block contents %}
+<section class="page-section about-heading">
+    <div class="container">
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src={% static "assets/img/about.jpg" %} alt="..." />
+        <div class="about-heading-content">
+            <div class="row">
+                <div class="col-xl-9 col-lg-10 mx-auto">
+                    <div class="bg-faded rounded p-5" class="channel-text">
+                        <h2 id="Target">Talk Channel</h2>
+                        <li class="channel-text"><a href={% url "websystem:channel1" %} class="channel-text">Channel1</a></li>
+                        <li class="channel-text"><a href={% url "websystem:channel2" %} class="channel-text">Channel2</a></li>
+                        <li class="channel-text"><a href={% url "websystem:channel3" %} class="channel-text">Channel3</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

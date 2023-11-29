@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}CHOCOLATE CAFÉ{% endblock %}
+
+{% block contents %}
+<section class="page-section clearfix">
+    <div class="container">
+        <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src={% static "assets/img/beach.jpg" %} alt="..." />
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-upper">TALK TIME</span>
+                    <span class="section-heading-lower">Coffee breaking</span>
+                </h2>
+                <p class="mb-3">多くの人と会話を楽しみましょう！</p>
+                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href={% url "websystem:talk" %}>TALK START</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section intro-text" >
+    <div class="container">
+        <div class="product-item">
+            <!-- <div class="product-item-title d-flex">
+                <div class="bg-faded p-5 d-flex ms-auto rounded">
+                    <h2 class="section-heading mb-0">
+                        <span class="section-heading-upper">ログインユーザー限定</span>
+                        <span class="section-heading-lower">Coffees & Teas</span>
+                    </h2>
+                </div>
+            </div> -->
+            <!-- <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src={% static "assets/img/products-01.jpg" %} alt="..." /> -->
+            <div class="product-item-description d-flex me-auto">
+                <div class="bg-faded p-5 d-flex ms-auto rounded"><p class="mb-0">ログインして多くのユーザーと会話を楽しみましょう！<br>＊ログイン状態でも閲覧は可能です。</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner bg-faded text-center rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper">始める前に</span>
+                        <span class="section-heading-lower">STOP</span>
+                    </h2>
+                    <p class="mb-0">表現と言論の自由のもと公的良俗に反しない発言を心がけて下さい。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

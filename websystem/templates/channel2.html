@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}CHOCOLATE CAFÉ{% endblock %}
+
+
+{% block contents %}
+
+<section class="page-section about-heading">
+    <div class="container">
+        <!-- パンくずリスト -->
+        <ul class="breadcrumbs">
+            <li><a href="{% url "websystem:talk" %}">talk</a></li>
+            <li>channel2</li>
+        </ul>
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src={% static "assets/img/about.jpg" %} alt="..." />
+        <div class="about-heading-content">
+            <div class="row">
+                <div class="col-xl-9 col-lg-10 mx-auto">
+                    <div class="bg-faded rounded p-5" id="Target">
+                        <button onclick="scrollToBottom()" class="right-align">最下部へ移動</button>
+                        <h2>channel(2)</h2>
+                        {% for record in Channel2_records %}
+                            <span class="section-heading-upper">{{record.id}}. 投稿者:{{record.name}} {{record.posted_at}} </span> <!--投稿時刻--> <!--名前-->
+                            <p>{{record.content|truncatechars:200}}</p> <!--コメント-->  
+                        {% endfor %}
+                        {% if user.is_authenticated %}
+                            <button type="button" onclick="location.href='{% url "websystem:channel2form" %}'" >書き込む</button>
+                        {% else %}
+                            <button type="button" onclick="location.href='{% url "accounts:login" %}'" >ログインして書き込む</button>
+                        {% endif %}
+                        <br>
+                    </div>
+                    {% include "pagination.html" %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
